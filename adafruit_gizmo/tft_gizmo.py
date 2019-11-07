@@ -36,7 +36,7 @@ import board
 import displayio
 from adafruit_st7789 import ST7789
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, too-few-public-methods
 class TFT_Gizmo(ST7789):
     """Class representing a TFT Gizmo."""
 
