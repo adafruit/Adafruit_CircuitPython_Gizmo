@@ -2,25 +2,13 @@
 This test will initialize the display using displayio and draw a solid green
 background, a smaller purple rectangle, and some yellow text.
 """
-import board
-import busio
 import displayio
 import terminalio
 from adafruit_display_text import label
-from adafruit_st7789 import ST7789
+from adafruit_gizmo import tft_gizmo
 
-# Release any resources currently in use for the displays
-displayio.release_displays()
-
-spi = busio.SPI(board.SCL, MOSI=board.SDA)
-tft_cs = board.RX
-tft_dc = board.TX
-tft_backlight = board.A3
-
-display_bus = displayio.FourWire(spi, command=tft_dc, chip_select=tft_cs)
-
-display = ST7789(display_bus, width=240, height=240, rowstart=80,
-                 backlight_pin=tft_backlight, rotation=180)
+# Create the TFT Gizmo display
+display = tft_gizmo.TFT_Gizmo()
 
 # Make the display context
 splash = displayio.Group(max_size=10)
