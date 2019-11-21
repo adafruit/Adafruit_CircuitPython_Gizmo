@@ -26,7 +26,7 @@
 Helper for the `TFT Gizmo <https://www.adafruit.com/product/4367>`_.
 
 
-* Author(s): Carter Nelson
+* Author(s): Carter Nelson, Melissa LeBlanc-Williams
 """
 
 __version__ = "0.0.0-auto.0"
@@ -44,16 +44,16 @@ class TFT_Gizmo(ST7789):
         displayio.release_displays()
         if spi is None:
             import busio
-            self._spi = busio.SPI(board.SCL, MOSI=board.SDA)
+            spi = busio.SPI(board.SCL, MOSI=board.SDA)
         if cs is None:
-            self._cs = board.RX
+            cs = board.RX
         if dc is None:
-            self._dc = board.TX
+            dc = board.TX
         if backlight is None:
-            self._backlight = board.A3
-        self._display_bus = displayio.FourWire(self._spi,
-                                               command=self._dc,
-                                               chip_select=self._cs)
+            backlight = board.A3
+        self._display_bus = displayio.FourWire(spi,
+                                               command=dc,
+                                               chip_select=cs)
         super().__init__(self._display_bus, width=240, height=240,
-                         rowstart=80, backlight_pin=self._backlight,
+                         rowstart=80, backlight_pin=backlight,
                          rotation=180)
