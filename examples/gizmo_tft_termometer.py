@@ -3,19 +3,20 @@ This example will initialize the display using displayio and draw a bmp image
 background, and overlay text containing the value read from the on-board temperature sensor.
 User may press the A button to switch between celsius and fahrenheit units.
 
-Requires:
-* [Adafruit_CircuitPython_Gizmo](https://github.com/adafruit/Adafruit_CircuitPython_Gizmo)
-* [Adafruit_CircuitPython_ST7789](https://github.com/adafruit/Adafruit_CircuitPython_ST7789)
-* [Adafruit_CircuitPython_Display_Text](https://github.com/adafruit/Adafruit_CircuitPython_Display_Text)
-* [Adafruit_CircuitPython_CircuitPlayground](https://github.com/adafruit/Adafruit_CircuitPython_CircuitPlayground)
+Required libraries:
+* Adafruit_CircuitPython_Gizmo
+* Adafruit_CircuitPython_ST7789
+* Adafruit_CircuitPython_Display_Text
+* Adafruit_CircuitPython_CircuitPlayground
 """
+from adafruit_circuitplayground import cp
 import time
 import displayio
 import terminalio
 from adafruit_display_text import label
 from adafruit_gizmo import tft_gizmo
 display = tft_gizmo.TFT_Gizmo()
-from adafruit_circuitplayground import cp
+
 
 # text scaling factor
 TEXT_SCALE = 2
