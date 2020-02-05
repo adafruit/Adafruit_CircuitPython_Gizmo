@@ -1,5 +1,5 @@
 """
-This test will initialize the display using displayio and draw a bmp image
+This example will initialize the display using displayio and draw a bmp image
 background, and overlay text containing the value read from the on-board temperature sensor.
 User may press the A button to switch between celsius and fahrenheit units.
 
