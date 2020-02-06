@@ -9,8 +9,8 @@ Required libraries:
 * Adafruit_CircuitPython_Display_Text
 * Adafruit_CircuitPython_CircuitPlayground
 """
-from adafruit_circuitplayground import cp
 import time
+from adafruit_circuitplayground import cp
 import displayio
 import terminalio
 from adafruit_display_text import label
