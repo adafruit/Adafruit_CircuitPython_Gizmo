@@ -15,6 +15,7 @@ import displayio
 import terminalio
 from adafruit_display_text import label
 from adafruit_gizmo import tft_gizmo
+
 display = tft_gizmo.TFT_Gizmo()
 
 
@@ -30,7 +31,7 @@ show_c_units = True
 
 # function to convert celsius degrees to fahrenheit
 def c_to_f(c_val):
-    return (c_val * 9/5) + 32
+    return (c_val * 9 / 5) + 32
 
 
 # Open the background image file
@@ -61,7 +62,7 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     text_area.anchor_point = (0.5, 0.0)
 
     # Set the location to center of display, accounting for text_scale
-    text_area.anchored_position = (240/(2*TEXT_SCALE), 240/(2*TEXT_SCALE))
+    text_area.anchored_position = (240 / (2 * TEXT_SCALE), 240 / (2 * TEXT_SCALE))
 
     # Subgroup for text scaling
     text_group.append(text_area)
@@ -77,7 +78,7 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
         # set current button state to variable
         cur_a_val = cp.button_a
         if cur_a_val and not old_a_val:  # if the button was released
-            print('Just released')
+            print("Just released")
             # flip the units boolean to the opposite value
             show_c_units = not show_c_units
 
