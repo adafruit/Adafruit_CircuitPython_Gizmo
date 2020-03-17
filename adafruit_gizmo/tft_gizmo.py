@@ -40,15 +40,20 @@ from adafruit_st7789 import ST7789
 class TFT_Gizmo(ST7789):
     """Class representing a TFT Gizmo."""
 
-    def __init__(self, *, spi=None, cs=board.RX, dc=board.TX,
-                 backlight=board.A3, rotation=180):
+    def __init__(
+        self, *, spi=None, cs=board.RX, dc=board.TX, backlight=board.A3, rotation=180
+    ):
         displayio.release_displays()
         if spi is None:
-            import busio
+            import busio  # pylint: disable=import-outside-toplevel
+
             spi = busio.SPI(board.SCL, MOSI=board.SDA)
-        self._display_bus = displayio.FourWire(spi,
-                                               command=dc,
-                                               chip_select=cs)
-        super().__init__(self._display_bus, width=240, height=240,
-                         rowstart=80, backlight_pin=backlight,
-                         rotation=rotation)
+        self._display_bus = displayio.FourWire(spi, command=dc, chip_select=cs)
+        super().__init__(
+            self._display_bus,
+            width=240,
+            height=240,
+            rowstart=80,
+            backlight_pin=backlight,
+            rotation=rotation,
+        )
