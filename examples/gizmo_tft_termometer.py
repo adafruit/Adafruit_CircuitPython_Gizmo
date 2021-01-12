@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+# SPDX-License-Identifier: MIT
+
 """
 This example will initialize the display using displayio and draw a bmp image
 background, and overlay text containing the value read from the on-board temperature sensor.
