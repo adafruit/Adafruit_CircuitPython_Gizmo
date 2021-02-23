@@ -6,6 +6,8 @@ import displayio
 from adafruit_gizmo import eink_gizmo
 
 display = eink_gizmo.EInk_Gizmo()
+# Use the below line instead for the 200x200 E-Ink Gizmo
+# display = eink_gizmo.EInk_HD_Gizmo()
 
 # Create a display group for our screen objects
 display_group = displayio.Group()
