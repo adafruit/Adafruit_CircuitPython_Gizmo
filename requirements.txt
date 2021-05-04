@@ -4,3 +4,6 @@
 
 Adafruit-Blinka
 adafruit-circuitpython-busdevice
+adafruit-circuitpython-st7789
+adafruit-circuitpython-il0373
+adafruit-circuitpython-ssd1681
