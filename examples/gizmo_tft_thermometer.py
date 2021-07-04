@@ -56,7 +56,7 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     text = "%.2f C" % (round(cp.temperature, 2))
 
     # Create a Group for the text so we can scale it
-    text_group = displayio.Group(max_size=1, scale=TEXT_SCALE, x=0, y=0)
+    text_group = displayio.Group(scale=TEXT_SCALE, x=0, y=0)
 
     # Create a Label to show the initial temperature value
     text_area = label.Label(terminalio.FONT, text=text, color=0xFFFFFF)
