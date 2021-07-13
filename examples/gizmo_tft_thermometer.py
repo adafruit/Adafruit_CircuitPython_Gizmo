@@ -44,7 +44,12 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     bitmap = displayio.OnDiskBitmap(bitmap_file)
 
     # Create a TileGrid to hold the bitmap
-    tile_grid = displayio.TileGrid(bitmap, pixel_shader=displayio.ColorConverter())
+    tile_grid = displayio.TileGrid(
+        bitmap,
+        pixel_shader=getattr(bitmap, "pixel_shader", displayio.ColorConverter()),
+        # TODO: Once CP6 is no longer supported, replace the above line with below
+        # pixel_shader=bitmap.pixel_shader,
+    )
 
     # Create a Group to hold the TileGrid
     group = displayio.Group()
