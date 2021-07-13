@@ -16,12 +16,13 @@ display_group = displayio.Group()
 with open("/display-ruler.bmp", "rb") as file:
     picture = displayio.OnDiskBitmap(file)
     # Create a Tilegrid with the bitmap and put in the displayio group
+    # CircuitPython 6 & 7 compatible
     sprite = displayio.TileGrid(
         picture,
         pixel_shader=getattr(picture, "pixel_shader", displayio.ColorConverter()),
-        # TODO: Once CP6 is no longer supported, replace the above line with below
-        # pixel_shader=picture.pixel_shader,
     )
+    # CircuitPython 7 compatible only
+    # sprite = displayio.TileGrid(picture, pixel_shader=bitmap.pixel_shader)
     display_group.append(sprite)
 
     # Place the display group on the screen
