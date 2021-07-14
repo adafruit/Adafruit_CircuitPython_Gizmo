@@ -44,7 +44,13 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     bitmap = displayio.OnDiskBitmap(bitmap_file)
 
     # Create a TileGrid to hold the bitmap
-    tile_grid = displayio.TileGrid(bitmap, pixel_shader=displayio.ColorConverter())
+    # CircuitPython 6 & 7 compatible
+    tile_grid = displayio.TileGrid(
+        bitmap,
+        pixel_shader=getattr(bitmap, "pixel_shader", displayio.ColorConverter()),
+    )
+    # CircuitPython 7 compatible only
+    # tile_grid = displayio.TileGrid(bitmap, pixel_shader=bitmap.pixel_shader)
 
     # Create a Group to hold the TileGrid
     group = displayio.Group()
