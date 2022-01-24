@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/adafruit-circuitpython-gizmo/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/gizmo/en/latest/
+    :target: https://docs.circuitpython.org/projects/gizmo/en/latest/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
@@ -30,7 +30,7 @@ This is easily achieved by downloading
 Documentation
 =============
 
-API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/gizmo/en/latest/>`_.
+API documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/gizmo/en/latest/>`_.
 
 Contributing
 ============
