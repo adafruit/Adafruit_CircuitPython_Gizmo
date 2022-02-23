@@ -21,11 +21,28 @@ import displayio
 from adafruit_il0373 import IL0373
 from adafruit_ssd1681 import SSD1681
 
+try:
+    from typing import Optional
+    from busio import SPI
+    from microcontroller import Pin
+except ImportError:
+    pass
+
 # pylint: disable=invalid-name, too-few-public-methods
 class EInk_Gizmo(IL0373):
-    """Class representing a 152x152 Tri-Color EInk Gizmo."""
+    """Class representing a 152x152 Tri-Color EInk Gizmo.
 
-    def __init__(self, *, spi=None, cs=None, dc=None, reset=None, busy=None):
+    :param"""
+
+    def __init__(
+        self,
+        *,
+        spi: Optional[SPI] = None,
+        cs: Optional[Pin] = None,
+        dc: Optional[Pin] = None,
+        reset: Optional[Pin] = None,
+        busy: Optional[Pin] = None
+    ) -> None:
         displayio.release_displays()
         if spi is None:
             import busio  # pylint: disable=import-outside-toplevel
@@ -55,7 +72,15 @@ class EInk_Gizmo(IL0373):
 class EInk_HD_Gizmo(SSD1681):
     """Class representing a 200x200 Tri-Color EInk HD Gizmo."""
 
-    def __init__(self, *, spi=None, cs=None, dc=None, reset=None, busy=None):
+    def __init__(
+        self,
+        *,
+        spi: Optional[SPI] = None,
+        cs: Optional[Pin] = None,
+        dc: Optional[Pin] = None,
+        reset: Optional[Pin] = None,
+        busy: Optional[Pin] = None
+    ) -> None:
         displayio.release_displays()
         if spi is None:
             import busio  # pylint: disable=import-outside-toplevel
