@@ -19,13 +19,26 @@ import board
 import displayio
 from adafruit_st7789 import ST7789
 
+try:
+    from typing import Optional
+    from busio import SPI
+    from microcontroller import Pin
+except ImportError:
+    pass
+
 # pylint: disable=invalid-name, too-few-public-methods
 class TFT_Gizmo(ST7789):
     """Class representing a TFT Gizmo."""
 
     def __init__(
-        self, *, spi=None, cs=board.RX, dc=board.TX, backlight=board.A3, rotation=180
-    ):
+        self,
+        *,
+        spi: Optional[SPI] = None,
+        cs: Pin = board.RX,
+        dc: Pin = board.TX,
+        backlight: Pin = board.A3,
+        rotation: int = 180
+    ) -> None:
         displayio.release_displays()
         if spi is None:
             import busio  # pylint: disable=import-outside-toplevel
