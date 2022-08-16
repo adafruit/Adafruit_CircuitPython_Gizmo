@@ -12,7 +12,7 @@ Helper for the `Tri-Color E-Ink Gizmo <https://www.adafruit.com/product/4428>`_.
 * Author(s): Melissa LeBlanc-Williams
 """
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Gizmo.git"
 
 from time import sleep

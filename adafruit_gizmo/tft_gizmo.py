@@ -12,7 +12,7 @@ Helper for the `TFT Gizmo <https://www.adafruit.com/product/4367>`_.
 * Author(s): Carter Nelson, Melissa LeBlanc-Williams
 """
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Gizmo.git"
 
 import board
