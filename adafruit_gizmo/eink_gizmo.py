@@ -28,6 +28,7 @@ try:
 except ImportError:
     pass
 
+
 # pylint: disable=invalid-name, too-few-public-methods
 class EInk_Gizmo(IL0373):
     """Class representing a 152x152 Tri-Color EInk Gizmo.

@@ -39,7 +39,6 @@ def c_to_f(c_val):
 
 # Open the background image file
 with open("/thermometer_background.bmp", "rb") as bitmap_file:
-
     # Setup the file as the bitmap data source
     bitmap = displayio.OnDiskBitmap(bitmap_file)
 

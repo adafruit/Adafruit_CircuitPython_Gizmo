@@ -26,6 +26,7 @@ try:
 except ImportError:
     pass
 
+
 # pylint: disable=invalid-name, too-few-public-methods
 class TFT_Gizmo(ST7789):
     """Class representing a TFT Gizmo."""
