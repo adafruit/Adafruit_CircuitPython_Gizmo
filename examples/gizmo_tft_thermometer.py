@@ -79,7 +79,7 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     group.append(text_group)
 
     # Add the main Group to the Display
-    display.show(group)
+    display.root_group = group
 
     # Loop forever
     while True:
