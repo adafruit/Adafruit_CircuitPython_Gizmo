@@ -15,7 +15,7 @@ display = tft_gizmo.TFT_Gizmo()
 
 # Make the display context
 splash = displayio.Group()
-display.show(splash)
+display.root_group = splash
 
 color_bitmap = displayio.Bitmap(240, 240, 1)
 color_palette = displayio.Palette(1)

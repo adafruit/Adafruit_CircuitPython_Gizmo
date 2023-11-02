@@ -26,7 +26,7 @@ with open("/display-ruler.bmp", "rb") as file:
     display_group.append(sprite)
 
     # Place the display group on the screen
-    display.show(display_group)
+    display.root_group = display_group
 
     # Refresh the display to have it actually show the image
     # NOTE: Do not refresh eInk displays sooner than 180 seconds
