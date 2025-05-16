@@ -5,9 +5,11 @@
 This test will initialize the display using displayio and draw a solid green
 background, a smaller purple rectangle, and some yellow text.
 """
+
 import displayio
 import terminalio
 from adafruit_display_text import label
+
 from adafruit_gizmo import tft_gizmo
 
 # Create the TFT Gizmo display

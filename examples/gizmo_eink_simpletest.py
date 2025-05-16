@@ -2,7 +2,9 @@
 # SPDX-License-Identifier: MIT
 
 import time
+
 import displayio
+
 from adafruit_gizmo import eink_gizmo
 
 display = eink_gizmo.EInk_Gizmo()

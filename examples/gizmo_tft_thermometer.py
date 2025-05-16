@@ -12,11 +12,14 @@ Required libraries:
 * Adafruit_CircuitPython_Display_Text
 * Adafruit_CircuitPython_CircuitPlayground
 """
+
 import time
-from adafruit_circuitplayground import cp
+
 import displayio
 import terminalio
+from adafruit_circuitplayground import cp
 from adafruit_display_text import label
+
 from adafruit_gizmo import tft_gizmo
 
 display = tft_gizmo.TFT_Gizmo()

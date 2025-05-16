@@ -3,7 +3,9 @@
 
 import time
 from random import randrange
+
 import displayio
+
 from adafruit_gizmo import tft_gizmo
 
 # Create the TFT Gizmo display

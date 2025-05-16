@@ -21,13 +21,13 @@ from adafruit_st7789 import ST7789
 
 try:
     from typing import Optional
+
     from busio import SPI
     from microcontroller import Pin
 except ImportError:
     pass
 
 
-# pylint: disable=invalid-name, too-few-public-methods
 class TFT_Gizmo(ST7789):
     """Class representing a TFT Gizmo."""
 
@@ -38,11 +38,11 @@ class TFT_Gizmo(ST7789):
         cs: Pin = board.RX,
         dc: Pin = board.TX,
         backlight: Pin = board.A3,
-        rotation: int = 180
+        rotation: int = 180,
     ) -> None:
         displayio.release_displays()
         if spi is None:
-            import busio  # pylint: disable=import-outside-toplevel
+            import busio
 
             spi = busio.SPI(board.SCL, MOSI=board.SDA)
         self._display_bus = displayio.FourWire(spi, command=dc, chip_select=cs)
