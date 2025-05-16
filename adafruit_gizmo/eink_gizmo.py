@@ -16,6 +16,7 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Gizmo.git"
 
 from time import sleep
+
 import board
 import displayio
 from adafruit_il0373 import IL0373
@@ -23,13 +24,13 @@ from adafruit_ssd1681 import SSD1681
 
 try:
     from typing import Optional
+
     from busio import SPI
     from microcontroller import Pin
 except ImportError:
     pass
 
 
-# pylint: disable=invalid-name, too-few-public-methods
 class EInk_Gizmo(IL0373):
     """Class representing a 152x152 Tri-Color EInk Gizmo.
 
@@ -42,11 +43,11 @@ class EInk_Gizmo(IL0373):
         cs: Optional[Pin] = None,
         dc: Optional[Pin] = None,
         reset: Optional[Pin] = None,
-        busy: Optional[Pin] = None
+        busy: Optional[Pin] = None,
     ) -> None:
         displayio.release_displays()
         if spi is None:
-            import busio  # pylint: disable=import-outside-toplevel
+            import busio
 
             spi = busio.SPI(board.SCL, MOSI=board.SDA)
         if cs is None:
@@ -69,7 +70,6 @@ class EInk_Gizmo(IL0373):
         )
 
 
-# pylint: disable=invalid-name, too-few-public-methods
 class EInk_HD_Gizmo(SSD1681):
     """Class representing a 200x200 Tri-Color EInk HD Gizmo."""
 
@@ -80,11 +80,11 @@ class EInk_HD_Gizmo(SSD1681):
         cs: Optional[Pin] = None,
         dc: Optional[Pin] = None,
         reset: Optional[Pin] = None,
-        busy: Optional[Pin] = None
+        busy: Optional[Pin] = None,
     ) -> None:
         displayio.release_displays()
         if spi is None:
-            import busio  # pylint: disable=import-outside-toplevel
+            import busio
 
             spi = busio.SPI(board.SCL, MOSI=board.SDA)
         if cs is None:
