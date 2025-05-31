@@ -19,6 +19,7 @@ from time import sleep
 
 import board
 import displayio
+import fourwire
 from adafruit_il0373 import IL0373
 from adafruit_ssd1681 import SSD1681
 
@@ -56,7 +57,7 @@ class EInk_Gizmo(IL0373):
             dc = board.TX
         if reset is None:
             reset = board.A3
-        self._display_bus = displayio.FourWire(
+        self._display_bus = fourwire.FourWire(
             spi, command=dc, chip_select=cs, reset=reset, baudrate=1000000
         )
         sleep(1)
@@ -93,7 +94,7 @@ class EInk_HD_Gizmo(SSD1681):
             dc = board.TX
         if reset is None:
             reset = board.A3
-        self._display_bus = displayio.FourWire(
+        self._display_bus = fourwire.FourWire(
             spi, command=dc, chip_select=cs, reset=reset, baudrate=1000000
         )
         sleep(1)

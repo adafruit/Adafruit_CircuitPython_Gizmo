@@ -17,6 +17,7 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Gizmo.git"
 
 import board
 import displayio
+import fourwire
 from adafruit_st7789 import ST7789
 
 try:
@@ -45,7 +46,7 @@ class TFT_Gizmo(ST7789):
             import busio
 
             spi = busio.SPI(board.SCL, MOSI=board.SDA)
-        self._display_bus = displayio.FourWire(spi, command=dc, chip_select=cs)
+        self._display_bus = fourwire.FourWire(spi, command=dc, chip_select=cs)
         super().__init__(
             self._display_bus,
             width=240,
