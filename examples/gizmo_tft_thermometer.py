@@ -61,7 +61,7 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
     group.append(tile_grid)
 
     # variable with initial text value, temperature rounded to 2 places
-    text = "%.2f C" % (round(cp.temperature, 2))
+    text = f"{round(cp.temperature, 2):.2f} C"
 
     # Create a Group for the text so we can scale it
     text_group = displayio.Group(scale=TEXT_SCALE, x=0, y=0)
@@ -95,10 +95,10 @@ with open("/thermometer_background.bmp", "rb") as bitmap_file:
 
         if show_c_units:
             # Update the text
-            text_area.text = "%.2f C" % (round(cp.temperature, 2))
+            text_area.text = f"{round(cp.temperature, 2):.2f} C"
         else:  # show f units
             # Update the text
-            text_area.text = "%.2f F" % (round(c_to_f(cp.temperature), 2))
+            text_area.text = f"{round(c_to_f(cp.temperature), 2):.2f} F"
 
         # set previous button value for next time
         old_a_val = cur_a_val
